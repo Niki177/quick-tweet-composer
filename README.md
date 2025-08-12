@@ -1,31 +1,52 @@
-Quick Tweet Composer
-====================
+# Quick Tweet Composer
 
-This is a front-end React + Vite + TypeScript starter for the Quick Tweet Composer UI (copy-paste ready). The UI matches the Figma design and includes:
+A React + Vite + TypeScript app that lets you compose and post tweets (or simulate posting) with a beautiful UI inspired by the Figma design.
 
-- OAuth integration points (you must supply a backend for secure OAuth token exchange)
-- Ctrl/Cmd + Enter to post
-- Character counter and progress bar
-- Dark/light toggle
-- Responsive layout
+## Features
+- 🔐 **Twitter OAuth 2.0 Authentication** *(integration point — requires backend)*
+- ✍️ **Tweet Composition** with real-time character counting
+- 🚀 **Direct Posting** *(currently simulated; replace with backend call)*
+- 🌙 **Dark Mode Support** (toggle)
+- 📱 **Responsive Design** — works on desktop & mobile
+- ⌨ **Keyboard Shortcut** — Ctrl/Cmd + Enter to post
 
-## Setup (local)
-1. Install Node.js v16+
-2. Extract files and run:
+## Prerequisites
+- Node.js v16 or higher
+- npm (comes with Node.js)
+
+## Getting Started (Localhost)
+
+1. **Clone this repository**
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/quick-tweet-composer.git
+   cd quick-tweet-composer
+   ```
+
+2. **Install dependencies**
    ```bash
    npm install
+   ```
+
+3. **Run locally**
+   ```bash
    npm run dev
    ```
-3. Open http://localhost:5173
+   - App will be available at [http://localhost:5173](http://localhost:5173)
 
-## Notes about OAuth / Posting to Twitter (X)
-- For security, you must handle the OAuth 2.0 authorization flow server-side.
-- This repo intentionally **does not** include secrets or server logic.
-- See Twitter API docs for how to implement an OAuth backend.
-- After your backend obtains an access token, you can POST from the frontend to your backend endpoint to actually publish a tweet.
+4. **Stop the server**
+   - In the terminal, press `CTRL + C`
 
-## Deploying
-- Use Vercel, Netlify, or similar. For Netlify, build and publish the `dist/` folder after running `npm run build`.
+## Notes on Twitter OAuth
+- This repo only simulates tweet posting for security.
+- For real posting:
+  - You need a **Twitter Developer Account**
+  - You must build a **backend server** to handle OAuth 2.0
+  - Twitter API requires a valid redirect URL — `localhost` works for dev, but production needs HTTPS
 
-## Customization
-- The UI code lives in `src/components/TwitterWriter.tsx`. Replace the `submit` function with a call to your secure backend.
+## Development Scripts
+- `npm run dev` — start dev server (localhost)
+- `npm run build` — build for production (outputs to `dist/`)
+- `npm run preview` — preview production build locally
+
+## License
+MIT
